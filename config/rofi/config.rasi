@@ -1,1 +1,10 @@
-@theme "/usr/share/rofi/themes/sidebar.rasi"
+/** Basic config file **/
+
+configuration {
+  show-icons: true;
+  icon-theme: "Papirus";
+  display-drun: "";
+  display-window: "﩯 ";
+  display-combi: "  ";
+}
+@theme "themes/sidetab-nord.rasi"
