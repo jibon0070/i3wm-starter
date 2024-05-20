@@ -6,7 +6,16 @@ if [[ $EUID -ne 0 ]]; then
 	exit 1
 fi
 
+username=$(id -u -n 1000)
+
 apt install nala
-nala install i3 polybar rofi feh alacritty picom
+nala install i3 polybar rofi feh alacritty picom variety -y
+
+if [ ! -d /home/$username/.config ]; then
+	mkdir -p /home/$username/.config
+fi
+
+cp config/* /home/$username/.config
+chown -R $username:$username /home/$username/.config
 
 exit 0
