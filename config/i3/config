@@ -195,7 +195,7 @@ exec_always ~/.config/polybar/launch.sh &
 # }
 
 # lock
-bindsym $mod+Mod1+l exec i3lock
+bindsym $mod+Mod1+l exec i3lock-fancy
 
 
 # Pulse Audio controls
