@@ -14,7 +14,11 @@ cp ~/.config/i3 ~/.config/polybar/ ~/.config/rofi/ config -R
 if [ $(git status | grep -E "^nothing\s" | wc -l) -ne 1 ]; then
 	git add -A
 	git commit -m "Update config $(date '+%Y-%m-%d')"
-	git push
+	if git push; then
+		notify-send "Auto sync done"
+	else
+		notify-send "Auto sync failed" "Please fix the error first" -u "critical"
+	fi
 fi
 
 exit 0
