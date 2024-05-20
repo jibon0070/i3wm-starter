@@ -15,7 +15,7 @@ if [ ! -d /home/$username/.config ]; then
 	mkdir -p /home/$username/.config
 fi
 
-cp config/* /home/$username/.config
-chown -R $username:$username /home/$username/.config
+cp config/* /home/$username/.config -R
+chown $username:$username /home/$username/.config -R
 
 exit 0
