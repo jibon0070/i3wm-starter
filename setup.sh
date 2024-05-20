@@ -6,4 +6,7 @@ if [[ $EUID -ne 0 ]]; then
 	exit 1
 fi
 
+apt install nala
+nala install i3 polybar rofi feh alacritty picom
+
 exit 0
