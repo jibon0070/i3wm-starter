@@ -7,9 +7,12 @@ fi
 
 git checkout main
 
+git pull
+
 cp ~/.config/i3 ~/.config/polybar/ ~/.config/rofi/ config -R
 
 if [ $(git status | grep -E "^nothing\s" | wc -l) -ne 1 ]; then
+	git add -A
 	git commit -m "Update config $(date +%Y%m%d%H%M%S)"
 	git push
 fi
